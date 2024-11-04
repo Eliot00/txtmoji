@@ -1,6 +1,7 @@
 import { createSignal } from "solid-js";
 import DecryptForm from "~/components/DecryptForm";
 import EncryptForm from "~/components/EncryptForm";
+import { Codeberg, Github } from "~/components/icons";
 import { Tabs, TabsContent, TabsIndicator, TabsList, TabsTrigger } from "~/components/ui/tabs";
 
 export default function Home() {
@@ -24,9 +25,14 @@ export default function Home() {
         </TabsContent>
       </Tabs>
       <footer class="mt-auto flex items-center justify-center gap-2">
-        <a href="https://codeberg.org/Elliot00/txtmoji" target="_blank" rel="noopener noreferrer" class="underline">
-          源码
-        </a>
+        <span class="flex items-center gap-2">
+          <a href="https://codeberg.org/Elliot00/txtmoji" target="_blank" rel="noopener noreferrer">
+            <Github />
+          </a>
+          <a href="https://codeberg.org/Elliot00/txtmoji" target="_blank" rel="noopener noreferrer">
+            <Codeberg />
+          </a>
+        </span>
         <div class="w-0.5 h-4 bg-zinc-400" />
         <span>
           <a href="https://elliot00.com" target="_blank" rel="noopener noreferrer" class="underline">
