@@ -3,15 +3,15 @@ import { TextArea } from "~/components/ui/textarea";
 import { Button } from "~/components/ui/button";
 import { Check, Copy, Lock } from "lucide-solid";
 import { createSignal, Show } from "solid-js";
-import { encrypt } from "~/libs/crypto";
+import { decrypt } from "~/libs/crypto";
 
-export default function EncryptForm() {
-  const [encrypted, setEncrypted] = createSignal<string | null>(null)
+export default function DecryptForm() {
+  const [decrypted, setDecrypted] = createSignal<string | null>(null)
   const [copied, setCopied] = createSignal(false)
 
   const copyToClipboard = async () => {
-    if (encrypted()) {
-      await navigator.clipboard.writeText(encrypted()!)
+    if (decrypted()) {
+      await navigator.clipboard.writeText(decrypted()!)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     }
@@ -24,33 +24,33 @@ export default function EncryptForm() {
         onSubmit={async (e) => {
           e.preventDefault()
           const formData = new FormData(e.currentTarget)
-          const plaintext = formData.get("plaintext")
+          const encrypted = formData.get("encrypted")
           const password = formData.get("password")
-          if (plaintext) {
-            const encrypted = await encrypt(plaintext.toString(), password?.toString())
-            setEncrypted(encrypted)
+          if (encrypted) {
+            const decrypted = await decrypt(encrypted.toString(), password?.toString())
+            setDecrypted(decrypted)
           }
         }}
       >
-        <TextFieldRoot name="plaintext" required>
-          <TextFieldLabel>1. 要加密的文本</TextFieldLabel>
+        <TextFieldRoot name="encrypted" required>
+          <TextFieldLabel>1. 加密后的文本</TextFieldLabel>
           <TextArea placeholder="请输入" />
         </TextFieldRoot>
         <TextFieldRoot name="password">
-          <TextFieldLabel>2. 设置密钥</TextFieldLabel>
+          <TextFieldLabel>2. 密钥</TextFieldLabel>
           <TextField placeholder="如：1234" type="password" />
         </TextFieldRoot>
         <div>
-          <label class="text-sm font-medium block mb-2">3. 加密</label>
+          <label class="text-sm font-medium block mb-2">3. 解密</label>
           <Button type="submit" class="w-full">
-            <Lock class="mr-2 h-4 w-4" /> 加密
+            <Lock class="mr-2 h-4 w-4" /> 解密
           </Button>
         </div>
       </form>
-      <Show when={!!encrypted()}>
+      <Show when={!!decrypted()}>
         <div class="relative mt-2">
         <pre class="animate-in fade-in zoom-in bg-zinc-100 rounded-md p-2 overflow-x-scroll">
-          <code>{encrypted()}</code>
+          <code>{decrypted()}</code>
         </pre>
           <button
             class="absolute right-2 top-2 bg-white border rounded p-1 hover:bg-gray-200"
