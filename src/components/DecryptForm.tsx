@@ -1,7 +1,7 @@
 import { TextFieldRoot, TextFieldLabel, TextField } from "~/components/ui/textfield";
 import { TextArea } from "~/components/ui/textarea";
 import { Button } from "~/components/ui/button";
-import { Check, Copy, Lock } from "lucide-solid";
+import { Check, Copy, Unlock } from "lucide-solid";
 import { createSignal, Show } from "solid-js";
 import { decrypt } from "~/libs/crypto";
 
@@ -43,7 +43,7 @@ export default function DecryptForm() {
         <div>
           <label class="text-sm font-medium block mb-2">3. 解密</label>
           <Button type="submit" class="w-full">
-            <Lock class="mr-2 h-4 w-4" /> 解密
+            <Unlock class="mr-2 h-4 w-4" /> 解密
           </Button>
         </div>
       </form>
