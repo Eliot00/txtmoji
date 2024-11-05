@@ -1,4 +1,4 @@
-import { TextFieldRoot, TextFieldLabel, TextField } from "~/components/ui/textfield";
+import { TextFieldRoot, TextFieldLabel, TextField, TextFieldDescription } from "~/components/ui/textfield";
 import { TextArea } from "~/components/ui/textarea";
 import { Button } from "~/components/ui/button";
 import { Check, Copy, Lock } from "lucide-solid";
@@ -39,6 +39,7 @@ export default function EncryptForm() {
         <TextFieldRoot name="password">
           <TextFieldLabel>2. 设置密钥</TextFieldLabel>
           <TextField placeholder="如：1234" type="password" />
+          <TextFieldDescription>选填，解密时必须使用相同的密钥。</TextFieldDescription>
         </TextFieldRoot>
         <div>
           <label class="text-sm font-medium block mb-2">3. 加密</label>

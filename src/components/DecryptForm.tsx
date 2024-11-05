@@ -33,8 +33,8 @@ export default function DecryptForm() {
         }}
       >
         <TextFieldRoot name="encrypted" required>
-          <TextFieldLabel>1. 加密后的文本</TextFieldLabel>
-          <TextArea placeholder="请输入" />
+          <TextFieldLabel>1. 加密后的emoji</TextFieldLabel>
+          <TextArea placeholder="🤓👻😈" />
         </TextFieldRoot>
         <TextFieldRoot name="password">
           <TextFieldLabel>2. 密钥</TextFieldLabel>
