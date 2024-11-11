@@ -26,7 +26,7 @@ export default function Home() {
       </Tabs>
       <footer class="mt-auto flex items-center justify-center gap-2">
         <span class="flex items-center gap-2">
-          <a href="https://codeberg.org/Elliot00/txtmoji" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Eliot00/txtmoji" target="_blank" rel="noopener noreferrer">
             <Github />
           </a>
           <a href="https://codeberg.org/Elliot00/txtmoji" target="_blank" rel="noopener noreferrer">
