@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsIndicator, TabsList, TabsTrigger } from "~/compo
 export default function Home() {
   const [selectedTab, setSelectedTab] = createSignal("encrypt")
   return (
-    <main class="h-screen max-w-lg flex flex-col items-center gap-8 mx-auto bg-background text-foreground py-20">
+    <main class="h-screen max-w-lg flex flex-col items-center gap-8 mx-auto bg-background text-foreground py-20 px-2">
       <h1 class="font-bold text-5xl">
         文本 <span classList={{ 'rotate-180': selectedTab() === 'decrypt' }} class="mx-2 inline-block transition-transform duration-500">→</span> 😀
       </h1>
