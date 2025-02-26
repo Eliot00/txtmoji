@@ -11,6 +11,9 @@ importers:
       '@kobalte/core':
         specifier: ^0.13.7
         version: 0.13.7(solid-js@1.9.3)
+      '@solid-primitives/script-loader':
+        specifier: ^2.3.0
+        version: 2.3.0(solid-js@1.9.3)
       '@solidjs/router':
         specifier: ^0.14.10
         version: 0.14.10(solid-js@1.9.3)
@@ -1012,6 +1015,11 @@ packages:
 
   '@solid-primitives/rootless@1.4.5':
     resolution: {integrity: sha512-GFJE9GC3ojx0aUKqAUZmQPyU8fOVMtnVNrkdk2yS4kd17WqVSpXpoTmo9CnOwA+PG7FTzdIkogvfLQSLs4lrww==}
+    peerDependencies:
+      solid-js: ^1.6.12
+
+  '@solid-primitives/script-loader@2.3.0':
+    resolution: {integrity: sha512-K2ZwBJeCsDJWKuK9mvkf11BU30h6lCX/P0aahvpdpa8ROnk3doE6qIJDJaAMO8shQKwsZSXEyvlbXcJ3Tg0XcQ==}
     peerDependencies:
       solid-js: ^1.6.12
 
@@ -3681,6 +3689,10 @@ snapshots:
   '@solid-primitives/rootless@1.4.5(solid-js@1.9.3)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.9.3)
+      solid-js: 1.9.3
+
+  '@solid-primitives/script-loader@2.3.0(solid-js@1.9.3)':
+    dependencies:
       solid-js: 1.9.3
 
   '@solid-primitives/static-store@0.0.8(solid-js@1.9.3)':

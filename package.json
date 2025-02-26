@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@kobalte/core": "^0.13.7",
+    "@solid-primitives/script-loader": "^2.3.0",
     "@solidjs/router": "^0.14.10",
     "@solidjs/start": "^1.0.9",
     "class-variance-authority": "^0.7.0",
